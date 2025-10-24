@@ -1,24 +1,31 @@
 using trab1.Model;
+using trab1.Data;
 
 namespace trab1.Repository
 {
     public class CommentRepository : ICommentRepository
     {
-        private readonly List<Comment> _comments = new();
+        private readonly AppDbContext _context;
+
+        public CommentRepository(AppDbContext context)
+        {
+            _context = context;
+        }
 
         public IEnumerable<Comment> GetAll()
         {
-            return _comments;
+            return _context.Comments.ToList(); // REMOVE todos os .Include
         }
 
         public Comment? GetById(Guid id)
         {
-            return _comments.FirstOrDefault(c => c.Id == id);
+            return _context.Comments.FirstOrDefault(c => c.Id == id); // REMOVE todos os .Include
         }
 
         public void Add(Comment comment)
         {
-            _comments.Add(comment);
+            _context.Comments.Add(comment);
+            _context.SaveChanges();
         }
     }
 }

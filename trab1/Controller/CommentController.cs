@@ -28,10 +28,8 @@ namespace trab1.Controller
             if (comment == null)
                 return BadRequest();
 
-            comment.Id = Guid.NewGuid();
             _repository.Add(comment);
-
-            return CreatedAtAction(nameof(GetAll), new { id = comment.Id }, comment);
+            return Ok(comment);
         }
     }
 }

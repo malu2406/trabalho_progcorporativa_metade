@@ -1,21 +1,13 @@
 namespace trab1.Model
 {
-    public record class Comment
+    public class Comment
     {
-    public string? Text
-        {
-            get; set;
-        }
-        public Guid Id
-        {
-            get; set;
-        }
-
-        public required bool Liked
-        {
-            get; set;
-        }
-
-        public DateTime Date = DateTime.Now; 
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string? Text { get; set; }
+        public bool Liked { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
+        public Guid MusicId { get; set; }
+        // REMOVA esta linha:
+        // public virtual Music Music { get; set; } = null!;
     }
 }

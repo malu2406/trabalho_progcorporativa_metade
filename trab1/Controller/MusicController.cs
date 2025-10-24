@@ -28,10 +28,8 @@ namespace trab1.Controller
             if (music == null)
                 return BadRequest();
 
-            music.Id = Guid.NewGuid();
             _repository.Add(music);
-
-            return CreatedAtAction(nameof(GetAll), new { id = music.Id }, music);
+            return Ok(music);
         }
     }
 }
