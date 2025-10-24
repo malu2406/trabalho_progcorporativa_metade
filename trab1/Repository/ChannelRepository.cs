@@ -14,12 +14,12 @@ namespace trab1.Repository
 
         public IEnumerable<Channel> GetAll()
         {
-            return _context.Channels.ToList(); // REMOVE .Include(c => c.Musics)
+            return _context.Channels.ToList();
         }
 
         public Channel? GetById(Guid id)
         {
-            return _context.Channels.FirstOrDefault(c => c.Id == id); // REMOVE .Include(c => c.Musics)
+            return _context.Channels.FirstOrDefault(c => c.Id == id); 
         }
 
         public void Add(Channel channel)

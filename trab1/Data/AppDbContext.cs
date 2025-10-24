@@ -10,8 +10,5 @@ namespace trab1.Data
         public DbSet<Channel> Channels { get; set; }
         public DbSet<Music> Musics { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
-        // REMOVA o método OnModelCreating completo
-        // Os relacionamentos serão inferidos automaticamente
     }
 }

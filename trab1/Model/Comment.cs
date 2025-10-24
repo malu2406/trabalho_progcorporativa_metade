@@ -7,7 +7,6 @@ namespace trab1.Model
         public bool Liked { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
         public Guid MusicId { get; set; }
-        // REMOVA esta linha:
-        // public virtual Music Music { get; set; } = null!;
+        
     }
 }

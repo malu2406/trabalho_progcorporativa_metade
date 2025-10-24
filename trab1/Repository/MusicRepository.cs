@@ -14,12 +14,12 @@ namespace trab1.Repository
 
         public IEnumerable<Music> GetAll()
         {
-            return _context.Musics.ToList(); // REMOVE todos os .Include
+            return _context.Musics.ToList(); 
         }
 
         public Music? GetById(Guid id)
         {
-            return _context.Musics.FirstOrDefault(m => m.Id == id); // REMOVE todos os .Include
+            return _context.Musics.FirstOrDefault(m => m.Id == id);
         }
 
         public void Add(Music music)

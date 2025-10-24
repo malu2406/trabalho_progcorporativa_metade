@@ -14,12 +14,12 @@ namespace trab1.Repository
 
         public IEnumerable<Comment> GetAll()
         {
-            return _context.Comments.ToList(); // REMOVE todos os .Include
+            return _context.Comments.ToList(); 
         }
 
         public Comment? GetById(Guid id)
         {
-            return _context.Comments.FirstOrDefault(c => c.Id == id); // REMOVE todos os .Include
+            return _context.Comments.FirstOrDefault(c => c.Id == id); 
         }
 
         public void Add(Comment comment)
