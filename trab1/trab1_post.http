@@ -1,0 +1,48 @@
+// post da musica
+
+POST http://localhost:5000/api/music
+Content-Type: application/json
+
+{
+  "title": "Espresso",
+  "channel": {
+    "id": "2f2b93e4-4f7a-4a91-a9b3-7b1e73e4bdf2",
+    "name": "Sabrina Carpenter"
+  },
+  "commentaries": [
+    {
+      "id": "b7c8e8d4-6e5a-4b6e-8f0a-44c9b19f36c7",
+      "text": "Essa música é viciante demais!",
+      "liked": true,
+      "date": "2025-10-23T22:00:00Z"
+    },
+    {
+      "id": "c4a31f4a-9a8d-4ccf-8028-823d14c7f04e",
+      "text": "A voz dela tá incrível aqui.",
+      "liked": true,
+      "date": "2025-10-23T22:05:00Z"
+    }
+  ]
+}
+
+// post do canal
+
+POST http://localhost:5000/api/channel
+Content-Type: application/json
+
+{
+  "name": "Canal Malu",
+  "musics": [],
+  "inscritos": 10000,
+  "data": "2025-10-23"
+}
+
+// post do comentário 
+
+POST http://localhost:5000/api/comment
+Content-Type: application/json
+
+{
+  "text": "Esse é um novo comentário!",
+  "liked": true
+}
